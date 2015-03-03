@@ -1,0 +1,20 @@
+/**
+*   Rent A Flat
+*
+*   Defines some additional layout settings.
+*
+**/
+body {
+    font-family: Arial, Calibri;
+}
+
+hr {
+    border-color: #aaa;
+    margin: 5px 5px 10px;
+}
+
+#logo {
+    width: 140px;
+    height: 40px;
+}
+

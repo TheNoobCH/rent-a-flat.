@@ -1,5 +1,1 @@
-(function() {
-
-	var app = angular.module('store', []);
-
-})();
+angular.module('rent-a-flat', []);
