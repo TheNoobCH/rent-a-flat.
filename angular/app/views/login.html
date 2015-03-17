@@ -1,0 +1,37 @@
+<div ng-controller="loginController" ng-init="init()">
+    <div id="modal-login" class="modal fade" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ng-click="hide()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Login</h4>
+                </div>
+                <div class="modal-body row">
+
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+
+                        <p>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="username-addon">Username</span>
+                                <input type="text" class="form-control" ng-model="username" aria-describedby="username-addon" />
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="password-addon">Password</span>
+                                <input type="password" class="form-control" ng-model="password" aria-describedby="password-addon" />
+                            </div>
+                        </p>
+
+                        <p>
+                            <button type="button" class="btn btn-primary" ng-disabled="!isEnabled()" ng-click="login()">Login</button>
+                            <button type="button" class="btn btn-default" ng-click="register()">Register</button>
+                        </p>
+
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

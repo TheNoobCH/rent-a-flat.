@@ -1,1 +1,1 @@
-angular.module('rent-a-flat', []);
+var app = angular.module('rent-a-flat', ['ngRoute']);
