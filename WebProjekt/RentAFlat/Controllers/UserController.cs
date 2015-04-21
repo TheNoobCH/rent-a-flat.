@@ -117,8 +117,8 @@ namespace RentAFlat.Controllers
             base.Dispose(disposing);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
+
         public ActionResult Login(string username, string password)
         {
             var model = new User();
@@ -127,7 +127,9 @@ namespace RentAFlat.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(model);
+            var data = "http://www.codeproject.com/Articles/806029/Getting-started-with-AngularJS-and-ASP-NET-MVC-Par";
+
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
     }
 }
