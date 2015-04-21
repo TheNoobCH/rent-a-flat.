@@ -8,6 +8,6 @@ namespace RentAFlat.Models
 {
     public class RentAFlatDBContext : DbContext
     {
-        public DbSet<User> Movies { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

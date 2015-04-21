@@ -16,6 +16,24 @@ namespace RentAFlat.Models
         public string Email { get; set; }
         public string ProfilePic { get; set; }        
         public Boolean IsActive { get; set; }
+
+        public void create( 
+            string username, 
+            string password, 
+            string firstname, 
+            string lastname, 
+            string email, 
+            string profilePic, 
+            Boolean isActive)
+        {
+            this.Username = username;
+            this.Password = password;
+            this.Firstname = firstname;
+            this.Lastname = lastname;
+            this.Email = email;
+            this.ProfilePic = profilePic;
+            this.IsActive = isActive;
+        }
     }
 
 }

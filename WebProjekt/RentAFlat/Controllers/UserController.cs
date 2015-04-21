@@ -18,15 +18,12 @@ namespace RentAFlat.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Movies.ToList());
+            return View(db.Users.ToList());
         }
-
-        //
-        // GET: /User/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            User user = db.Movies.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -34,29 +31,29 @@ namespace RentAFlat.Controllers
             return View(user);
         }
 
-        //
-        // GET: /User/Create
 
         public ActionResult Create()
         {
             return View();
         }
 
-        //
-        // POST: /User/Create
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(User user)
+        public ActionResult Create(string username, string firstname, string lastname, string email, string password)
         {
+            var model = new User();
+
+            if(db.Users.Count(u => u.Username == username) > 0)
+
+            model.create(username, password, firstname, lastname, email, "", true);
             if (ModelState.IsValid)
             {
-                db.Movies.Add(user);
+                db.Users.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(model);
         }
 
         //
@@ -64,7 +61,7 @@ namespace RentAFlat.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            User user = db.Movies.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -93,7 +90,7 @@ namespace RentAFlat.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            User user = db.Movies.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -108,8 +105,8 @@ namespace RentAFlat.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Movies.Find(id);
-            db.Movies.Remove(user);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -118,6 +115,21 @@ namespace RentAFlat.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string username, string password)
+        {
+
+            if (ModelState.IsValid && db.Users.Count(u => u.Username == username && u.Password == password) > 0)
+            {
+                db.Users.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
     }
 }
