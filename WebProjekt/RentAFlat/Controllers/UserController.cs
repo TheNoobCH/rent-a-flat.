@@ -121,11 +121,9 @@ namespace RentAFlat.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string username, string password)
         {
-
+            var model = new User();
             if (ModelState.IsValid && db.Users.Count(u => u.Username == username && u.Password == password) > 0)
             {
-                db.Users.Add(model);
-                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
