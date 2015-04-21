@@ -7,8 +7,8 @@ angular.module('rent-a-flat')
         $routeProvider
             .when("/home", {templateUrl: "views/search.html"})
             .when("/login", {templateUrl: "views/login.html"})
-            .when("/register", {templateUrl: "views/register.html"})
+            .when("/register", {templateUrl: "views/register.html", controller: "registerController"})
+            .when("/overview", {templateUrl: "views/overview.html", controller: "overviewController"})
             .otherwise({redirectTo: '/home'});
-
 
     });

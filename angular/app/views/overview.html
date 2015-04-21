@@ -1,0 +1,48 @@
+<div id="overviewPage" class="row">
+
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+
+        <h2>Overview</h2>
+
+        <br/>
+
+        <h4>My Flats <button type="button" class="btn btn-info btn-sm">New apartment</button> </h4>
+        - You don't have inserted any flat
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h4>My rented Flats</h4>
+        - You don't have rented any flat
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h4>Offers for my flats</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th>Flat</th>
+                <th>Interest person</th>
+                <th>Functions</th>
+            </tr>
+
+            <tbody ng-repeat="offer in myOffers">
+                <tr>
+                    <td>{{offer.flat}}</td>
+                    <td>{{offer.interest}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm">Accept</button>
+                        <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br/>
+        <br/>
+
+    </div>
+
+</div>
