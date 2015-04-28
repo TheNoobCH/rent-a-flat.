@@ -5,10 +5,11 @@ angular.module('rent-a-flat')
         //$locationProvider.html5Mode(true);
 
         $routeProvider
-            .when("/home", {templateUrl: "views/search.html"})
-            .when("/login", {templateUrl: "views/login.html"})
+            .when("/home", {templateUrl: "views/search.html", controller: "searchController"})
+            .when("/login", {templateUrl: "views/login.html", controller: "loginController"})
             .when("/register", {templateUrl: "views/register.html", controller: "registerController"})
             .when("/overview", {templateUrl: "views/overview.html", controller: "overviewController"})
+            .when("/listFlats", {templateUrl: "views/listFlats.html", controller: "listFlatsController"})
             .otherwise({redirectTo: '/home'});
 
     });

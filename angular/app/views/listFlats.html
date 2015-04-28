@@ -1,0 +1,24 @@
+<h4>Your results</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Price</th>
+    </tr>
+    <tr ng-repeat="flat in flats">
+        <td>{{flat.Title}}</td>
+        <td>{{flat.Location}}</td>
+        <td>{{flat.Price}}</td>
+    </tr>
+
+    <!--<tbody ng-repeat="offer in myOffers">-->
+    <!--<tr>-->
+    <!--<td>{{offer.flat}}</td>-->
+    <!--<td>{{offer.interest}}</td>-->
+    <!--<td>-->
+    <!--<button type="button" class="btn btn-success btn-sm">Accept</button>-->
+    <!--<button type="button" class="btn btn-danger btn-sm">Reject</button>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+</table>
