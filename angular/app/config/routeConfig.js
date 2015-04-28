@@ -9,7 +9,6 @@ angular.module('rent-a-flat')
             .when("/login", {templateUrl: "views/login.html"})
             .when("/register", {templateUrl: "views/register.html", controller: "registerController"})
             .when("/overview", {templateUrl: "views/overview.html", controller: "overviewController"})
-            .when("/listFlats", {templateUrl: "views/listFlats.html", controller: "listFlatsController"})
             .otherwise({redirectTo: '/home'});
 
     });
