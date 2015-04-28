@@ -1,9 +1,14 @@
 <h4>Your results</h4>
 <table class="table table-bordered">
     <tr>
-        <th>Flat</th>
-        <th>Interest person</th>
-        <th>Functions</th>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Price</th>
+    </tr>
+    <tr ng-repeat="flat in flats">
+        <td>{{flat.Title}}</td>
+        <td>{{flat.Location}}</td>
+        <td>{{flat.Price}}</td>
     </tr>
 
     <!--<tbody ng-repeat="offer in myOffers">-->

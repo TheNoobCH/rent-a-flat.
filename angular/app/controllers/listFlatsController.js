@@ -4,16 +4,30 @@ angular.module('rent-a-flat')
 
         //public
         $scope.flats = [{
-            "Id":1,
-            "OwnerId":1,
-            "OwnerDisplayName":"Felix Neidhart",
-            "Location":"Bern",
-            "PostCode":3000,
-            "Address":"Länggassstrasse 43",
-            "Title":"Mansion",
-            "Price":2000,
-            "RoomCount":5
-        }];
+            "Id": 1,
+            "OwnerId": 1,
+            "OwnerDisplayName": "Felix Neidhart",
+            "Location": "Bern",
+            "PostCode": 3000,
+            "Address": "Länggassstrasse 43",
+            "Title": "Mansion",
+            "Price": 2000,
+            "RoomCount": 5,
+            "MainPic": "img/klsjf.jpg",
+            "IsActive": True
+        },{
+            "Id": 2,
+            "OwnerId": 3,
+            "OwnerDisplayName": "Luca Berger",
+            "Location": "Bern",
+            "PostCode": 3000,
+            "Address": "Muristalden 43",
+            "Title": "Haus",
+            "Price": 2500,
+            "RoomCount": 6,
+            "MainPic": "img/dlsjf.jpg",
+            "IsActive": True
+        },];
 
         $scope.getUser = function() {
             //return userService.getUser();
