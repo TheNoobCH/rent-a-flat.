@@ -38,12 +38,15 @@ namespace RentAFlat.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(string username, string firstname, string lastname, string email, string password)
+        [AllowAnonymous]
+        public ActionResult Register(string username, string firstname, string lastname, string email, string password)
         {
             var model = new User();
 
-            if(db.Users.Count(u => u.Username == username) > 0)
+            if (db.Users.Count(u => u.Username == username) > 0)
+            {
+                ModelState.AddModelError("username", "Username already exists. Please choose another one");
+            }
 
             model.create(username, password, firstname, lastname, email, "", true);
             if (ModelState.IsValid)
