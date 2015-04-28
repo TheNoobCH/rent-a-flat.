@@ -28,7 +28,7 @@ namespace RentAFlat.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return Json(user, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -50,10 +50,11 @@ namespace RentAFlat.Controllers
             {
                 db.Users.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var data = new { success = true };
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-
-            return View(model);
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+            
         }
 
         //
