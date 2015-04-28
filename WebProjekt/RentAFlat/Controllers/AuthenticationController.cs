@@ -24,10 +24,10 @@ namespace RentAFlat.Controllers
                 if (authUser != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Username, true);
-                    return Json(new { authenticated = true }, JsonRequestBehavior.AllowGet);
+                    return Json(new { authenticated = true, userId = authUser.Id }, JsonRequestBehavior.AllowGet);
                 }
             }
-            return Json(new { authenticated = false }, JsonRequestBehavior.AllowGet);
+            return Json(new { authenticated = false, text = "Username or Password was incorrect" }, JsonRequestBehavior.AllowGet);
         }
 
         [AllowAnonymous]

@@ -1,2 +1,6 @@
 *.xml
 angular/.idea/workspace.xml
+*.dll
+*.pdb
+*.pdb
+*.pdb
