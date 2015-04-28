@@ -14,7 +14,7 @@ angular.module('rent-a-flat')
             "Price": 2000,
             "RoomCount": 5,
             "MainPic": "img/klsjf.jpg",
-            "IsActive": True
+            "IsActive": true
         },{
             "Id": 2,
             "OwnerId": 3,
@@ -26,7 +26,7 @@ angular.module('rent-a-flat')
             "Price": 2500,
             "RoomCount": 6,
             "MainPic": "img/dlsjf.jpg",
-            "IsActive": True
+            "IsActive": true
         },];
 
         $scope.getUser = function() {
