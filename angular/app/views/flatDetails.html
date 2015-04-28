@@ -1,1 +1,10 @@
-Hallo
+<h4>{{flat.Title}}</h4>
+<div>
+    <table class="detailFlat table table-bordered">
+        <tr ng-repeat="(key,value) in flat" ng-hide="key=='MainPic'">
+            <th>{{key}}</th>
+            <td>{{value}}</td>
+        </tr>
+    </table>
+    <img ng-src="{{flat.MainPic}}" id="MainPic">
+</div>
