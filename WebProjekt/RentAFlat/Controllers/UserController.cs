@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RentAFlat.Models;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace RentAFlat.Controllers
 {
@@ -13,45 +15,29 @@ namespace RentAFlat.Controllers
     {
         private RentAFlatDBContext db = new RentAFlatDBContext();
 
-        //
-        // GET: /User/
-
-        public ActionResult Index()
-        {
-            return View(db.Users.ToList());
-        }
-
-        public ActionResult Details(int id = 0)
-        {
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return Json(user, JsonRequestBehavior.AllowGet);
-        }
-
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Register(string username, string firstname, string lastname, string email, string password)
+        public ActionResult Register(UserViewModel model)
         {
-            var model = new User();
-
-            if (db.Users.Count(u => u.Username == username) > 0)
+            if (db.Users.Count(u => u.Username == model.Username) > 0)
             {
                 ModelState.AddModelError("username", "Username already exists. Please choose another one");
             }
 
-            model.create(username, password, firstname, lastname, email, "", true);
+            User user = new User();
+
+            user.Username = model.Username;
+            user.Password = HashPassword(model.Password);
+            user.Firstname = model.Lastname;
+            user.Lastname = model.Lastname;
+            user.ProfilePic = model.ProfilePic;
+            user.IsActive = true;
+            user.Email = model.Email;
+
             if (ModelState.IsValid)
             {
-                db.Users.Add(model);
+                
+                db.Users.Add(user);
                 db.SaveChanges();
                 var data = new { success = true };
                 return Json(data, JsonRequestBehavior.AllowGet);
@@ -60,65 +46,14 @@ namespace RentAFlat.Controllers
             
         }
 
-        //
-        // GET: /User/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        private byte[] HashPassword(string password)
         {
-            User user = db.Users.Find(id);
-            if (user == null)
+            using (var md5Hasher = new MD5CryptoServiceProvider())
             {
-                return HttpNotFound();
+                var encoder = new UTF8Encoding();
+                return md5Hasher.ComputeHash(encoder.GetBytes(password));
             }
-            return View(user);
-        }
-
-        //
-        // POST: /User/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(User user)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(user);
-        }
-
-        //
-        // GET: /User/Delete/5
-
-        public ActionResult Delete(int id = 0)
-        {
-            User user = db.Users.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        //
-        // POST: /User/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
         }
 
     }
