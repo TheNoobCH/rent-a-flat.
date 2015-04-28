@@ -118,19 +118,5 @@ namespace RentAFlat.Controllers
             base.Dispose(disposing);
         }
 
-
-
-        public ActionResult Login(string username, string password)
-        {
-            var model = new User();
-            if (ModelState.IsValid && db.Users.Count(u => u.Username == username && u.Password == password) > 0)
-            {
-                return RedirectToAction("Index");
-            }
-
-            var data = "http://www.codeproject.com/Articles/806029/Getting-started-with-AngularJS-and-ASP-NET-MVC-Par";
-
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
     }
 }
