@@ -16,7 +16,6 @@ namespace RentAFlat.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -25,22 +24,17 @@ namespace RentAFlat.Controllers
                 if (authUser != null)
                 {
                     FormsAuthentication.SetAuthCookie(model.Username, true);
-
-                    var data = new
-                    {
-                        authenticated = true
-                    };
-                    return Json(data, JsonRequestBehavior.AllowGet);
+                    return Json(new { authenticated = true }, JsonRequestBehavior.AllowGet);
                 }
             }
-            return Json(false, JsonRequestBehavior.AllowGet);
+            return Json(new { authenticated = false }, JsonRequestBehavior.AllowGet);
         }
 
         [AllowAnonymous]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return Json(true, JsonRequestBehavior.AllowGet);
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
         }
 
         public User Authenticate(string username, string password)
