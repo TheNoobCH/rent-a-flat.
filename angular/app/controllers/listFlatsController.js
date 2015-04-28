@@ -1,6 +1,6 @@
 angular.module('rent-a-flat')
 
-    .controller('listFlatsController', function ($scope) {
+    .controller('listFlatsController', function ($scope,$location,$routeParams) {
 
         //public
         $scope.flats = [{
@@ -27,7 +27,11 @@ angular.module('rent-a-flat')
             "RoomCount": 6,
             "MainPic": "img/dlsjf.jpg",
             "IsActive": true
-        },];
+        }];
+
+        $scope.flatSelected = function(Id){
+            $location.path("/flatDetails").search({flatId: Id});
+        };
 
         $scope.getUser = function() {
             //return userService.getUser();

@@ -1,12 +1,14 @@
 <h4>Your results</h4>
-<table class="table table-bordered">
+<table class="overviewTable table table-bordered">
     <tr>
         <th>Title</th>
+        <th>Rooms</th>
         <th>Location</th>
         <th>Price</th>
     </tr>
-    <tr ng-repeat="flat in flats">
+    <tr ng-repeat="flat in flats" ng-click="flatSelected(flat.Id)">
         <td>{{flat.Title}}</td>
+        <td>{{flat.RoomCount}}</td>
         <td>{{flat.Location}}</td>
         <td>{{flat.Price}}</td>
     </tr>

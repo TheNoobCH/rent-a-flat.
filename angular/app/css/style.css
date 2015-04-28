@@ -50,3 +50,15 @@ hr {
 .errors:empty {
     display: none;
 }
+
+.overviewTable {
+    margin: 20px;
+}
+
+.overviewTable tr:not(:first-child):hover{
+    background-color:lightgrey;
+    cursor:pointer;
+}
+.overviewTable td, .overviewTable th{
+    width: 50px;
+}
