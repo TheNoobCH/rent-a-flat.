@@ -51,7 +51,7 @@ hr {
     display: none;
 }
 
-.overviewTable {
+.overviewTable, .detailFlat {
     margin: 20px;
 }
 
@@ -59,6 +59,22 @@ hr {
     background-color:lightgrey;
     cursor:pointer;
 }
-.overviewTable td, .overviewTable th{
-    width: 50px;
+
+#flatDetails {
+    position:relative;
+    display:block;
+}
+
+#flatDetails table {
+    width:50%;
+    float:left;
+}
+
+#flatDetails table td{
+    text-align:right;
+}
+
+#flatdetails #mainPic {
+    width:45%;
+    float:right;
 }
