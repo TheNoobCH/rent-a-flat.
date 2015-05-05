@@ -13,12 +13,13 @@ namespace RentAFlat.Controllers
 {
     public class UserController : Controller
     {
-        private RentAFlatDBContext db = new RentAFlatDBContext();
+        
 
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Register(UserViewModel model)
         {
+            RentAFlatDBContext db = new RentAFlatDBContext();
             if (db.Users.Count(u => u.Username == model.Username) > 0)
             {
                 ModelState.AddModelError("username", "Username already exists. Please choose another one");
@@ -42,7 +43,7 @@ namespace RentAFlat.Controllers
                 var data = new { success = true };
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
-            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = false, text = "Registration failed!" }, JsonRequestBehavior.AllowGet);
             
         }
 

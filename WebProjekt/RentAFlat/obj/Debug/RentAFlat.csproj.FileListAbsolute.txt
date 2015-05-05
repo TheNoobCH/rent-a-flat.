@@ -59,7 +59,6 @@ C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Razor.xml
 C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.xml
 C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.Deployment.xml
 C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.Razor.xml
-C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\obj\Debug\RentAFlat.csprojResolveAssemblyReference.cache
 C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\obj\Debug\RentAFlat.dll
 C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\obj\Debug\RentAFlat.pdb
 C:\dev\CSharp\rent-a-flat\WebProjekt\RentAFlat\bin\RentAFlat.dll
@@ -126,3 +125,4 @@ C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.Deployment.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.Razor.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\obj\Debug\RentAFlat.pdb
+C:\rent-a-flat\rent-a-flat\WebProjekt\RentAFlat\obj\Debug\RentAFlat.csprojResolveAssemblyReference.cache

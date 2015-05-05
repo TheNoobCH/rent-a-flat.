@@ -25,7 +25,6 @@ namespace RentAFlat.Models
         [Required]
         public string Email { get; set; }
 
-        [Required]
         public string ProfilePic { get; set; }
 
         [Required]
