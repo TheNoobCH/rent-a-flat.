@@ -1,4 +1,6 @@
-﻿CREATE TABLE FlatImages (
+﻿USE RentAFlat
+
+CREATE TABLE FlatImages (
 Id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 Imagepath NVARCHAR(128) NULL);
 
