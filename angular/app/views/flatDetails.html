@@ -1,18 +1,18 @@
 <div class="container-fluid">
     <div class="row">
-        <h4>{{flat.Title}}</h4>
+        <h4>{{getFlat().Title}}</h4>
     </div>
     <div class="row">
         <div class="col-md-6">
             <table class="table table-bordered">
-                <tr ng-repeat="(key,value) in flat" ng-hide="key=='MainPic'">
+                <tr ng-repeat="(key,value) in getFlat()" ng-hide="key=='MainPic'">
                     <th>{{key}}</th>
                     <td>{{value}}</td>
                 </tr>
             </table>
         </div>
         <div class="col-md-6">
-            <img ng-src="{{flat.MainPic}}" id="MainPic" />
+            <img ng-src="{{getFlat().MainPic}}" id="MainPic" />
         </div>
     </div>
 </div>
