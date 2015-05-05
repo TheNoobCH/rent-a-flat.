@@ -1,6 +1,6 @@
 angular.module('rent-a-flat')
 
-    .controller('registerController', function ($scope, $location) {
+    .controller('registerController', function ($scope, $location, loginService) {
 
         $scope.username = "";
         $scope.password = "";
@@ -19,8 +19,8 @@ angular.module('rent-a-flat')
             isValid = true;
 
             //username
-            if ($scope.username.length < 5) {
-                $scope.errors += "<b>Username:</b> Must be at least 5 characters long.<br/>";
+            if ($scope.username.length < 3) {
+                $scope.errors += "<b>Username:</b> Must be at least 3 characters long.<br/>";
                 isValid = false;
             } else if ($scope.username.length > 30) {
                 $scope.errors += "<b>Username:</b> Mustn't be longer than 30 characters.<br/>";
@@ -29,8 +29,8 @@ angular.module('rent-a-flat')
 
 
             //password
-            if ($scope.password.length < 5) {
-                $scope.errors += "<b>Password:</b> Must be at least 5 characters long.<br/>";
+            if ($scope.password.length < 3) {
+                $scope.errors += "<b>Password:</b> Must be at least 3 characters long.<br/>";
                 isValid = false;
             } else if ($scope.password.length > 30) {
                 $scope.errors += "<b>Password:</b> Mustn't be longer than 30 characters.<br/>";
@@ -44,18 +44,6 @@ angular.module('rent-a-flat')
             } else if (!$scope.password.match("[0-9]")) {
                 $scope.errors += "<b>Password:</b> Must have at least one number. <br/>";
                 isValid = false;
-            } else {
-                var specialChars = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?";
-                var containsSpecialChars = false;
-                for (var i = 0; i < $scope.password.length; i++) {
-                    if (specialChars.indexOf($scope.password.charAt(i)) != -1) {
-                        containsSpecialChars = true;
-                    }
-                }
-                if (!containsSpecialChars) {
-                    $scope.errors += "<b>Password:</b> Must have at least one special character. <br/>";
-                    isValid = false;
-                }
             }
 
 
@@ -77,7 +65,7 @@ angular.module('rent-a-flat')
 
 
             //firstname
-            if ($scope.firstname.length < 5) {
+            if ($scope.firstname.length < 3) {
                 $scope.errors += "<b>Firstname:</b> Must have at least 5 Characters. <br/>";
                 isValid = false;
             } else if ($scope.firstname.length > 30) {
@@ -90,8 +78,8 @@ angular.module('rent-a-flat')
 
 
             //lastname
-            if ($scope.lastname.length < 5) {
-                $scope.errors += "<b>Lastname:</b> Must have at least 5 Characters. <br/>";
+            if ($scope.lastname.length < 3) {
+                $scope.errors += "<b>Lastname:</b> Must have at least 3 Characters. <br/>";
                 isValid = false;
             } else if ($scope.lastname.length > 30) {
                 $scope.errors += "<b>Lastname:</b> Mustn't be longer than 30 characters. <br/>";
@@ -112,6 +100,7 @@ angular.module('rent-a-flat')
         $scope.register = function() {
             if (validate()) {
                 console.log("register called without errors!");
+                loginService.register($scope.username, $scope.password, $scope.firstname, $scope.lastname, $scope.email, $scope)
             }
         };
 
