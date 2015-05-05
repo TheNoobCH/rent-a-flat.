@@ -14,4 +14,8 @@ angular.module('rent-a-flat')
             "interest": "Luca Berger"
         }];
 
+        $scope.navigateToNewFlat = function () {
+            $location.path('/newFlat');
+        };
+
     });

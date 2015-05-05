@@ -10,7 +10,7 @@ angular.module('rent-a-flat')
             "OwnerDisplayName": "Felix Neidhart",
             "Location": "Bern",
             "PostCode": 3000,
-            "Address": "Länggassstrasse 43",
+            "Address": "LÃ¤nggassstrasse 43",
             "Title": "Mansion",
             "Price": 2000,
             "RoomCount": 5,
