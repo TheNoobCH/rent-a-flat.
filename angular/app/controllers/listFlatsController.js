@@ -31,7 +31,7 @@ angular.module('rent-a-flat')
 
         $scope.flatSelected = function(Id){
             //$location.path("/flatDetails").search({flatId: Id});
-            $location.path("/flatDetails/flatId=" + Id);
+            $location.path("/flatDetails/" + Id);
         };
 
         $scope.getUser = function() {

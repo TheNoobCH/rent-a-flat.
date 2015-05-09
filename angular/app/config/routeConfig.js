@@ -11,6 +11,7 @@ angular.module('rent-a-flat')
             .when("/overview", {templateUrl: "views/overview.html", controller: "overviewController"})
             .when("/listFlats", {templateUrl: "views/listFlats.html", controller: "listFlatsController"})
             .when("/flatDetails/:flatId", {templateUrl: "views/flatDetails.html", controller: "flatDetailsController"})
+            .when("/newFlat", {templateUrl: "views/newFlat.html", controller: "newFlatController"})
             .otherwise({redirectTo: '/home'});
 
     });
