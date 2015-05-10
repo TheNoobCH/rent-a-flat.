@@ -1,6 +1,6 @@
 angular.module('rent-a-flat')
 
-    .controller('listFlatsController', function ($scope,$location,$routeParams) {
+    .controller('listFlatsController', function ($scope,$location,$routeParams, flatService) {
 
          var flats = [{
             "Id": 1,
@@ -29,13 +29,21 @@ angular.module('rent-a-flat')
         }];
 
         $scope.getFlats = function () {
-            if ($routeParams.location == undefined || $routeParams.location == "") {
-                console.log("ListFlats --> called with a location!");
-                return flats;
-            } else {
-                console.log("ListFlats --> called with a location!");
-                return flats;
-            }
+            //if ($routeParams.location == undefined || $routeParams.location == "") {
+            //    console.log("ListFlats --> called with a location!");
+            //    return flats;
+            //} else {
+            //    console.log("ListFlats --> called with a location!");
+            //    return flats;
+            //}
+
+            flatService.getFlats($routeParams.location).then(function (data) {
+                console.error(data);
+                return data;
+            }, function (err) {
+
+            });
+
         };
 
         $scope.flatSelected = function(Id){
