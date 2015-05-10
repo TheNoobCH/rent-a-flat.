@@ -13,13 +13,12 @@ namespace RentAFlat.Controllers
 {
     public class UserController : Controller
     {
-        
+        private RentAFlatDBContext db = new RentAFlatDBContext();
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Register(UserViewModel model)
+        public ActionResult Register(User model)
         {
-            RentAFlatDBContext db = new RentAFlatDBContext();
             if (db.Users.Count(u => u.Username == model.Username) > 0)
             {
                 ModelState.AddModelError("username", "Username already exists. Please choose another one");
@@ -48,12 +47,23 @@ namespace RentAFlat.Controllers
         }
 
 
-        private byte[] HashPassword(string password)
+        private string HashPassword(string password)
         {
             using (var md5Hasher = new MD5CryptoServiceProvider())
             {
                 var encoder = new UTF8Encoding();
-                return md5Hasher.ComputeHash(encoder.GetBytes(password));
+                byte[] bytes = md5Hasher.ComputeHash(encoder.GetBytes(password));
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder strBuild = new StringBuilder();
+
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    strBuild.Append(bytes[i].ToString("X2"));
+                }
+
+                return strBuild.ToString();
+
             }
         }
 

@@ -45,6 +45,9 @@ namespace RentAFlat.Controllers
             }
             var passwordHash = HashPassword(password);
 
+            var test = db.Users
+                .Where(u => u.Username == username).Select(a => a.Password);
+
             return db.Users
                 .Where(u => u.Username == username
                 && u.Password != null
@@ -52,12 +55,23 @@ namespace RentAFlat.Controllers
                 .SingleOrDefault();
         }
 
-        private byte[] HashPassword(string password)
+        private string HashPassword(string password)
         {
             using (var md5Hasher = new MD5CryptoServiceProvider())
             {
                 var encoder = new UTF8Encoding();
-                return md5Hasher.ComputeHash(encoder.GetBytes(password));
+                byte[] bytes = md5Hasher.ComputeHash(encoder.GetBytes(password));
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder strBuild = new StringBuilder();
+
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    strBuild.Append(bytes[i].ToString("X2"));
+                }
+
+                return strBuild.ToString();
+        
             }
         }
 

@@ -14,7 +14,7 @@ namespace RentAFlat.Models
         public string Username { get; set; }
 
         [Required]
-        public byte[] Password { get; set; }
+        public String Password { get; set; }
 
         [Required]
         public string Firstname { get; set; }
