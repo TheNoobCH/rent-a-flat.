@@ -1,5 +1,10 @@
 <div class="container">
-    <div class="row">
+
+    <div class="alert alert-danger" ng-show="message != ''">
+        {{message}}
+    </div>
+
+    <div ng-show="message == ''" class="row">
         <h4>{{getFlat().Title}}</h4>
     </div>
     <div class="row">
