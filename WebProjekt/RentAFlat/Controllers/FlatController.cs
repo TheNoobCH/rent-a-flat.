@@ -21,10 +21,24 @@ namespace RentAFlat.Controllers
         [AllowAnonymous]
         public JsonResult IndexSearch(string Location)
         {
-            var data = db.Flats
+            List<Flat> flats = new List<Flat>();
+
+            // If there is no search entry then display all flats
+            if (String.IsNullOrEmpty(Location))
+            {
+                flats = db.Flat
+                    .ToList();
+            }
+            else
+            {
+                var data = db.Flat
                 .Where(f => f.Location == Location).ToList();
 
-            return Json(data, JsonRequestBehavior.AllowGet);
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(flats, JsonRequestBehavior.AllowGet);
+            
         }
 
         [HttpPost]
@@ -32,7 +46,7 @@ namespace RentAFlat.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Flats.Add(model);
+                db.Flat.Add(model);
                 db.SaveChanges();
                 return Json(new { error = false }, JsonRequestBehavior.AllowGet);
             }
@@ -48,7 +62,7 @@ namespace RentAFlat.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Flats.Add(model);
+                db.Flat.Add(model);
                 db.SaveChanges();
                 return Json(new { error = false }, JsonRequestBehavior.AllowGet);
             }

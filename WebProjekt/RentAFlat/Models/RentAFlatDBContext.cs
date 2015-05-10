@@ -9,6 +9,6 @@ namespace RentAFlat.Models
     public class RentAFlatDBContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Flat> Flats { get; set; }
+        public DbSet<Flat> Flat { get; set; }
     }
 }

@@ -6,10 +6,10 @@
         <th>Location</th>
         <th>Price</th>
     </tr>
-    <tr ng-repeat="flat in flats" ng-click="flatSelected(flat.Id)">
+    <tr ng-repeat="flat in getFlats()" ng-click="flatSelected(flat.Id)">
         <td>{{flat.Title}}</td>
         <td>{{flat.RoomCount}}</td>
         <td>{{flat.Location}}</td>
-        <td>{{flat.Price}}</td>
+        <td>{{flat.Price | currency}}</td>
     </tr>
 </table>

@@ -1,15 +1,14 @@
 angular.module('rent-a-flat')
 
-    .controller('listFlatsController', function ($scope,$location,$routeParams) {
+    .controller('listFlatsController', function ($scope,$location,$routeParams, flatService) {
 
-        //public
-        $scope.flats = [{
+         var flats = [{
             "Id": 1,
             "OwnerId": 1,
             "OwnerDisplayName": "Felix Neidhart",
             "Location": "Bern",
             "PostCode": 3000,
-            "Address": "Länggassstrasse 43",
+            "Address": "LÃ¤nggassstrasse 43",
             "Title": "Mansion",
             "Price": 2000,
             "RoomCount": 5,
@@ -29,6 +28,24 @@ angular.module('rent-a-flat')
             "IsActive": true
         }];
 
+        $scope.getFlats = function () {
+            //if ($routeParams.location == undefined || $routeParams.location == "") {
+            //    console.log("ListFlats --> called with a location!");
+            //    return flats;
+            //} else {
+            //    console.log("ListFlats --> called with a location!");
+            //    return flats;
+            //}
+
+            flatService.getFlats($routeParams.location).then(function (data) {
+                console.error(data);
+                return data;
+            }, function (err) {
+
+            });
+
+        };
+
         $scope.flatSelected = function(Id){
             //$location.path("/flatDetails").search({flatId: Id});
             $location.path("/flatDetails/" + Id);
@@ -37,24 +54,5 @@ angular.module('rent-a-flat')
         $scope.getUser = function() {
             //return userService.getUser();
         };
-
-        // private
-        var message = "Test";
-
-        var getUser = function() {
-          return message;
-        };
-
-        //Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT(1,1),
-        //OwnerId INT NOT NULL,
-        //Location NVARCHAR(32) NOT NULL,
-        //PostCode TINYINT NOT NULL,
-        //Address NVARCHAR(64) NOT NULL,
-        //Title NVARCHAR(32) NOT NULL,
-        //Price REAL NOT NULL,
-        //RoomCount Decimal(2,1) NOT NULL,
-        //MainPic NVARCHAR(128) NOT NULL,
-        //IsActive BIT NOT NULL,
-        //Location NVARCHAR(32) NOT NULL,
 
     });
