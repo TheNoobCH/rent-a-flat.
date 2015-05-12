@@ -101,10 +101,7 @@ C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\Antlr3.Runtime.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\EntityFramework.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\Microsoft.Web.Infrastructure.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\Newtonsoft.Json.dll
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Net.Http.Formatting.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Helpers.dll
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Http.dll
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Http.WebHost.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Mvc.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Optimization.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Providers.dll
@@ -115,10 +112,7 @@ C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\WebGrease.dll
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\EntityFramework.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\Newtonsoft.Json.xml
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Net.Http.Formatting.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Helpers.xml
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Http.xml
-C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Http.WebHost.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Mvc.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.Razor.xml
 C:\dev\CSharp\RentAFlat\rent-a-flat\WebProjekt\RentAFlat\bin\System.Web.WebPages.xml
