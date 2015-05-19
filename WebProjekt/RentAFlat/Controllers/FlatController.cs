@@ -19,7 +19,7 @@ namespace RentAFlat.Controllers
         }
 
         [AllowAnonymous]
-        public JsonResult IndexSearch(string Location)
+        public ActionResult IndexSearch(string Location)
         {
             List<Flat> flats = new List<Flat>();
 
@@ -31,7 +31,7 @@ namespace RentAFlat.Controllers
             }
             else
             {
-                var data = db.Flat
+                List<Flat> data = db.Flat
                 .Where(f => f.Location == Location).ToList();
 
                 return Json(data, JsonRequestBehavior.AllowGet);

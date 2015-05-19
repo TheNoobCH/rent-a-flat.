@@ -2,49 +2,30 @@ angular.module('rent-a-flat')
 
     .controller('listFlatsController', function ($scope,$location,$routeParams, flatService) {
 
-         var flats = [{
-            "Id": 1,
-            "OwnerId": 1,
-            "OwnerDisplayName": "Felix Neidhart",
-            "Location": "Bern",
-            "PostCode": 3000,
-            "Address": "Länggassstrasse 43",
-            "Title": "Mansion",
-            "Price": 2000,
-            "RoomCount": 5,
-            "MainPic": "img/klsjf.jpg",
-            "IsActive": true
-        },{
-            "Id": 2,
-            "OwnerId": 3,
-            "OwnerDisplayName": "Luca Berger",
-            "Location": "Bern",
-            "PostCode": 3000,
-            "Address": "Muristalden 43",
-            "Title": "Haus",
-            "Price": 2500,
-            "RoomCount": 6,
-            "MainPic": "img/dlsjf.jpg",
-            "IsActive": true
-        }];
+        var counter = 0;
+        $scope.flats = [];
+        $scope.message = "";
 
-        $scope.getFlats = function () {
-            //if ($routeParams.location == undefined || $routeParams.location == "") {
-            //    console.log("ListFlats --> called with a location!");
-            //    return flats;
-            //} else {
-            //    console.log("ListFlats --> called with a location!");
-            //    return flats;
-            //}
+        var getFlats = function () {
+            if (counter < 1) {
+                flatService.getFlats($routeParams.location).then(function (data) {
+                    console.error(data);
+                    console.log(data.data);
+                    $scope.flats = data.data;
+                    if (data.data.length == 0) {
+                        $scope.message = "No flats were found at this location!";
+                    }
 
-            flatService.getFlats($routeParams.location).then(function (data) {
-                console.error(data);
-                return data;
-            }, function (err) {
-
-            });
-
+                }, function (err) {
+                    $scope.flats = [];
+                    $scope.message = "An error occured by trying to connect!";
+                });
+                counter++;
+            }
+            $scope.flats = [];
         };
+
+
 
         $scope.flatSelected = function(Id){
             //$location.path("/flatDetails").search({flatId: Id});
@@ -54,5 +35,7 @@ angular.module('rent-a-flat')
         $scope.getUser = function() {
             //return userService.getUser();
         };
+
+        getFlats();
 
     });

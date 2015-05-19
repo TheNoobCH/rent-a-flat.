@@ -11,12 +11,12 @@ namespace RentAFlat.Models
         public int Id { get; set; }
 
         [Required]
-        public string OwnerId { get; set; }
+        public int OwnerId { get; set; }
 
         public User Owner { get; set; }
 
         [Required]
-        public int PostCode { get; set; }
+        public long PostCode { get; set; }
 
         [Required]
         public string Address { get; set; }
