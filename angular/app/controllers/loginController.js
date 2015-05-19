@@ -25,10 +25,7 @@ angular.module('rent-a-flat')
         };
 
         $scope.login = function() {
-
             loginService.login($scope.username, $scope.password, $scope);
-            //$scope.errors = "login pressed with credentials: " + $scope.username + " : " + $scope.password;
-
         };
 
         $scope.register = function() {

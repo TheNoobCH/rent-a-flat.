@@ -1,8 +1,6 @@
 angular.module('rent-a-flat')
 
-    .config(function ($routeProvider, $locationProvider) {
-
-        //$locationProvider.html5Mode(true);
+    .config(function ($routeProvider) {
 
         $routeProvider
             .when("/home", {templateUrl: "views/search.html", controller: "searchController"})
