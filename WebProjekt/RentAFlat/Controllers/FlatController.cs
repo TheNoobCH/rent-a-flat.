@@ -58,19 +58,30 @@ namespace RentAFlat.Controllers
         }
 
         [HttpPost]
-        public JsonResult Details(Flat model)
+        public JsonResult Details(long Id)
         {
-            if (ModelState.IsValid)
-            {
-                db.Flat.Add(model);
-                db.SaveChanges();
-                return Json(new { error = false }, JsonRequestBehavior.AllowGet);
-            }
-            var errorList = (from item in ModelState
-                             where item.Value.Errors.Any()
-                             select item.Value.Errors[0].ErrorMessage).ToList();
+            var data = db.Flat.Where(f => f.Id == Id).SingleOrDefault();
 
-            return Json(new { error = true, text = errorList }, JsonRequestBehavior.AllowGet);
+            if (data != null)
+            {
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { error = "No entity with the Id: " + Id + "was found" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult Delete(long Id)
+        {
+            var flat = db.Flat.Where(f => f.Id == Id).SingleOrDefault();
+
+            if (flat != null)
+            {
+                db.Flat.Remove(flat);
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { success = false, error = "No entity with the Id: " + Id + "was found" }, JsonRequestBehavior.AllowGet);
         }
 
     }

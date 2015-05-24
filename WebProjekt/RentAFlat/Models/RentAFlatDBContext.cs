@@ -10,5 +10,6 @@ namespace RentAFlat.Models
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Flat> Flat { get; set; }
+        public DbSet<Offer> Offers { get; set; }
     }
 }
