@@ -1,0 +1,83 @@
+<div id="overviewPage" class="container">
+
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+
+        <h2>Overview</h2>
+
+        <br/>
+
+        <h4>My Flats <button type="button" ng-click="navigateToNewFlat()" class="btn btn-info btn-sm">New Flat</button> </h4>
+        <table ng-show="noFlats == ''" class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Rooms</th>
+                <th>Price</th>
+            </tr>
+
+            <tbody ng-repeat="flat in getMyFlats()">
+            <tr>
+                <td>{{flat.title}}</td>
+                <td>{{flat.location}}</td>
+                <td>{{flat.roomCount}}</td>
+                <td>{{flat.price | currency}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div ng-show="noFlats != ''">
+            {{noFlats}}
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h4>My rented Flats</h4>
+        <table ng-show="noRentedFlats == ''" class="table table-bordered">
+            <tr>
+                <th>TODO</th>
+            </tr>
+
+            <tbody ng-repeat="flat in getMyRentedFlats()">
+            <tr>
+            </tr>
+            </tbody>
+        </table>
+        <div ng-show="noRentedFlats != ''">
+            {{noRentedFlats}}
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <h4>Offers for my flats</h4>
+        <table ng-show="noOffers == ''" class="table table-bordered">
+            <tr>
+                <th>Flat</th>
+                <th>Interest person</th>
+                <th>Functions</th>
+            </tr>
+
+            <tbody ng-repeat="offer in getMyOffers()">
+                <tr>
+                    <td>{{offer.flat}}</td>
+                    <td>{{offer.interest}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm">Accept</button>
+                        <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-show="noOffers != ''">
+            {{noOffers}}
+        </div>
+
+        <br/>
+        <br/>
+
+    </div>
+
+</div>

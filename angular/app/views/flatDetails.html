@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="alert alert-danger" ng-show="message != ''">
+        {{message}}
+    </div>
+
+    <div ng-show="message == ''" class="row">
+
+<div class="container">
+    <div class="row">
+        <h4>{{getFlat().Title}}</h4>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <tr ng-repeat="(key,value) in getFlat()" ng-hide="key=='MainPic'">
+                    <th>{{key}}</th>
+                    <td>{{value}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <img ng-src="{{getFlat().MainPic}}" id="MainPic" />
+        </div>
+    </div>
+</div>

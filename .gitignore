@@ -1,0 +1,10 @@
+*.xml
+angular/.idea/workspace.xml
+*.dll
+*.pdb
+*.pdb
+*.pdb
+*.cache
+WebProjekt/RentAFlat/obj/Debug/RentAFlat.csprojResolveAssemblyReference.cache
+*.cache
+WebProjekt/RentAFlat/obj/Debug/RentAFlat.dll

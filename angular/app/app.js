@@ -1,0 +1,1 @@
+var app = angular.module('rent-a-flat', ['ngRoute']);

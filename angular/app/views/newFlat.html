@@ -1,0 +1,46 @@
+<div id="registerForm" class="container">
+
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+
+        <h2>New Flat</h2>
+
+        <div class="alert alert-danger errors" ng-show="!isValid()">
+            {{errors}}
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="title-addon">Title</span>
+            <input type="text" class="form-control" ng-model="title" aria-describedby="title-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="postCode-addon">PostCode</span>
+            <input type="text" class="form-control" ng-model="postCode" aria-describedby="postCode-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="address-addon">Address</span>
+            <input type="text" class="form-control" ng-model="address" aria-describedby="address-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="location-addon">Location</span>
+            <input type="text" class="form-control" ng-model="location" aria-describedby="location-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="price-addon">Price</span>
+            <input type="text" class="form-control" ng-model="price" aria-describedby="price-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="roomCount-addon">RoomCount</span>
+            <input type="text" class="form-control" ng-model="roomCount" aria-describedby="roomCount-addon" />
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="save()">Save</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+
+    </div>
+
+</div>

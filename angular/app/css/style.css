@@ -1,0 +1,80 @@
+/**
+*   Rent A Flat
+*
+*   Defines some additional layout settings.
+*
+**/
+
+/*
+	Defines the font for the web page
+*/
+body {
+    font-family: Arial, Calibri;
+}
+
+/*
+	Defines the style of a vertical line
+*/
+hr {
+    border-color: #aaa;
+    margin: 5px 5px 10px;
+}
+
+/*
+	Sets the logo image size
+*/
+#logo {
+    width: 140px;
+    height: 40px;
+}
+
+/*
+	Defines each addon the same size
+*/
+.input-group-addon {
+    min-width:100px;
+    text-align:left;
+}
+
+/*
+	Defines a little vertical space between the input groups.
+*/
+.input-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*
+    Displays the div boxes, only if they contain some text
+*/
+.errors:empty {
+    display: none;
+}
+
+.overviewTable, .detailFlat {
+    margin: 20px;
+}
+
+.overviewTable tr:not(:first-child):hover{
+    background-color:lightgrey;
+    cursor:pointer;
+}
+
+#flatDetails {
+    position:relative;
+    display:block;
+}
+
+#flatDetails table {
+    width:50%;
+    float:left;
+}
+
+#flatDetails table td{
+    text-align:right;
+}
+
+#flatdetails #mainPic {
+    width:45%;
+    float:right;
+}

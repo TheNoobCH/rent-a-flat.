@@ -1,0 +1,20 @@
+<h4>Your results</h4>
+<table class="overviewTable table table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Rooms</th>
+        <th>Location</th>
+        <th>Price</th>
+    </tr>
+    <tr ng-repeat="flat in flats" ng-click="flatSelected(flat.Id)">
+        <td>{{flat.Title}} hallo</td>
+        <td>{{flat.RoomCount}}</td>
+        <td>{{flat.Location}}</td>
+        <td>{{flat.Price | currency}}</td>
+    </tr>
+</table>
+
+
+    <div class="alert alert-danger" ng-show="message != ''">
+        {{ message }}
+    </div>

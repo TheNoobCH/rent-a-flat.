@@ -1,0 +1,46 @@
+<div id="registerForm" class="row">
+
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+
+        <h2>Register</h2>
+
+        <div class="alert alert-danger errors" ng-show="!isValid()">
+            {{errors}}
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="username-addon">Username</span>
+            <input type="text" class="form-control" ng-model="username" aria-describedby="username-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="password-addon">Password</span>
+            <input type="password" class="form-control" ng-model="password" aria-describedby="password-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="passwordRep-addon">Repeat</span>
+            <input type="password" class="form-control" ng-model="passwordRep" aria-describedby="passwordRep-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="email-addon">Email</span>
+            <input type="text" class="form-control" ng-model="email" aria-describedby="email-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="firstname-addon">Firstname</span>
+            <input type="text" class="form-control" ng-model="firstname" aria-describedby="firstname-addon" />
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="lastname-addon">Lastname</span>
+            <input type="text" class="form-control" ng-model="lastname" aria-describedby="lastname-addon" />
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="register()">Register</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+
+    </div>
+
+</div>

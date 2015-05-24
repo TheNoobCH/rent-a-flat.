@@ -1,0 +1,9 @@
+-	Angular Bootstrap: Bootstrap mit Angular umgesetzt: http://angular-ui.github.io/bootstrap/
+-	Angular Material Design: UI Framework für Material Design basierend auf Angular: https://material.angularjs.org/#/
+-	RequireJS: AMD Framework: Damit können Abhängigkeiten von JS-„Files“ gemanagt werden: http://requirejs.org/
+-	Angular Services:
+	o	Wrapper für „REST“ Backends (Ersatz für $http): https://docs.angularjs.org/api/ngResource/service/$resource
+	o	Nested Views und Statemaching (Ersatz für ngRoute): https://github.com/angular-ui/ui-router
+	o	Promise: Asynchrone Programmierung mit JS: https://docs.angularjs.org/api/ng/service/$q
+	o	ngForm: Formularhandling mit Angular: https://docs.angularjs.org/guide/forms
+-	„Responsive UI“: Button der anzeigt, dass im Hintergrund etwas „läuft“: http://hackedbychinese.github.io/ng-busy/
